@@ -222,6 +222,10 @@ module.exports = {
               if (association.type === 'model') {
                 return _.isEmpty(array) ? [] : transformToArrayID([array]);
               }
+              
+              if (_.isObject(array)) {
+                return transformToArrayID([array]);
+              }
 
               return [];
             };
